@@ -17,4 +17,4 @@ COPY . .
 # Expose the port that the Flask app will run on
 EXPOSE 80
 
-CMD ["python", "app.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
